@@ -1,5 +1,43 @@
 {
     "git.ignoreLimitWarning": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1
+    "files.autoSaveDelay": 1000, // Value in milliseconds, 1 is too short, consider a reasonable delay like 1000 for 1 second
+    "editor.fontLigatures": false,
+    "editor.fontFamily": "'Fira Code iScript', 'Fira Code', 'Courier New', monospace",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    // Following will be in italic (=FlottFlott)
+                    "comment",
+                    "entity.name.type.class", // Class names
+                    "keyword", // Import, export, return…
+                    "storage.modifier", // Static keyword
+                    "storage.type", // Class keyword
+                    "support.class.builtin",
+                    "keyword.control",
+                    "constant.language",
+                    "entity.other.attribute-name",
+                    "entity.name.method"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    // Following will be excluded from italics (VSCode has some defaults for italics)
+                    "invalid",
+                    "keyword.operator",
+                    "constant.numeric.css",
+                    "keyword.other.unit.px.css",
+                    "constant.numeric.decimal.js",
+                    "constant.numeric.json"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    }
 }
